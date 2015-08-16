@@ -11,9 +11,9 @@ command! -nargs=0 RunAllRubyTests :call s:RunAllRubyTests()
 command! -nargs=0 RunRubyFocusedTest :call s:RunRubyFocusedTest()
 
 function s:RunAllRubyTests()
-  call VimuxRunCommand(g:vimux_rspec_command . expand("%"))
+  call VimuxRunCommand(g:vimux_rspec_command . " " . expand("%"))
 endfunction
 
 function s:RunRubyFocusedTest()
-  call VimuxRunCommand(g:vimux_rspec_command . expand("%") . ":" . line("."))
+  call VimuxRunCommand(g:vimux_rspec_command . " " . expand("%") . ":" . line("."))
 endfunction
